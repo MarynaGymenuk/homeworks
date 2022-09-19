@@ -153,8 +153,8 @@
 
 // 8.*  Використовуючи властивості рядків (тип string), та регулярний вираз (regular expression) видалити голосні букви зі слова.
 
-        let someWord = 'London';
-        let regexp = /[eyuioa]/;
+        let someWord = 'LondOneyuiIIIIIOOOOOOEEEEEaaaaAAAA';
+        let regexp = /[eyuioa]/i;
         someWord = someWord.split(regexp).join('');
         console.log(someWord);
 
