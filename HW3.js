@@ -10,6 +10,11 @@
   *
   */
 
+  const arrowFunc = () => {
+    return 'Привіт, світ!'
+  }
+
+  console.log(arrowFunc());
 
 /** ЗАВДАННЯ 2
   *
@@ -18,6 +23,9 @@
   * 2. Використовуйте стрілочну функцію
   */
 
+  setTimeout(() => {
+    console.log(arrowFunc());
+  }, 5000);
 
 /** ЗАВДАННЯ 3
   *
@@ -32,6 +40,18 @@
   * "My name is <name> <surname>, I'm <age> years old and my favorite number is <favoriteNumber>"
   */
 
+  const obj = {
+    'name': 'Marina',
+    'surname': 'Humeniuk',
+    'favoriteNumber': '3'
+  }
+
+  const functionWithObj = (person) => {
+    person.age = 26;
+    return `My name is ${person.name} ${person.surname}, I'm ${person.age} years old and my favorite number is ${person.favoriteNumber}`;
+  }
+  
+  console.log(functionWithObj(obj));
 
 /** ЗАВДАННЯ 4
   *
@@ -44,6 +64,15 @@
   * 4. Поверніть новий масив як результат роботи функції та виведіть його у консоль
   */
 
+  let arr = [10, true, 'Marina'];
+
+  const functionWithArr = (client) => {
+    client[0] = 'ten';
+    return client;
+  }
+
+  console.log(functionWithArr(arr));
+
 /** ЗАВДАННЯ 5
   *
   * 1. Виправте код щоб обидва вирази (setTimeout та myFn()) працювали.
@@ -54,6 +83,14 @@
   *
   * myFn()
   */
+
+  function myFn(){
+    console.log('hello from myFn');
+  }
+
+  setTimeout(() => {
+    myFn();
+  }, 2000)
 
 /** ЗАВДАННЯ 6
   *
@@ -72,6 +109,34 @@
   * 5. Поверніть з функції новий масив. Результат роботи функції виведіть у консоль.
   */
 
+  let arr2 = [
+    {
+      'carBrand': 'Volkswagen',
+      'price': 120000,
+      'isAvailableForSale': true
+    },
+    {
+      'carBrand': 'Renault',
+      'price': 1200,
+      'isAvailableForSale': false
+    },
+    {
+      'carBrand': 'BMW',
+      'price': 150000,
+      'isAvailableForSale': true
+    }
+  ]
+
+  function carFunc (carArray){
+    let carObj = {};
+    for(let key in carArray[2]){
+      carObj[key] = carArray[2][key];
+    }
+    carArray.push(carObj);
+    return carArray;
+  }
+
+  console.log(carFunc(arr2));
 
 /** ЗАВДАННЯ 7
   *
@@ -91,6 +156,23 @@
   *     то виводьте значення властивості в консоль.
   */
 
+    const myObject = {
+      key1: true,
+      key5: 10,
+      key3: 'abc',
+      key4: null,
+      key10: NaN,
+    }
+
+    let myFunc = (obj) => {
+      for(let key in obj){
+        if(key == 'key3' || key == 'key10'){
+          console.log(obj[key]);
+        }
+      }
+    }
+
+    myFunc(myObject);
 
 /** ЗАВДАННЯ 8
   *
@@ -117,6 +199,23 @@
 
  */
 
+ const products = [
+  { productId: 1355, name: 'phone' },
+  { productId: 5131, name: 'laptop' },
+  { productId: 6134, name: 'tablet' },
+]
+
+const findProductById = (id, productsArr) => {
+  for(let i = 0; i < productsArr.length; i++){
+    if(productsArr[i].productId === id){
+      console.log(productsArr[i]);
+      return productsArr[i];
+    }
+  }
+  return undefined;
+}
+
+console.log(findProductById(45834, products));
 
 /** ЗАВДАННЯ 9
  *
