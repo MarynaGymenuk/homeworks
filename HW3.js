@@ -247,3 +247,45 @@ console.log(findProductById(45834, products));
   * Підказка 2: Ви повинні використовувати два параметри в колбек функції "element", "index"
   * Підказка 3: Кожен елемент масиву, крім першого, слід порівнювати з попереднім
   */
+
+  const a = [5, 'abc', 10, 1]
+  const b = [4, 10, 14, 25, 25, 50]
+  const c = [150, 132, 80, 40]
+  const d = [15, 26, 10, 23, 85]
+
+
+  function typeOfArray (element, index, array){
+    return Number.isInteger(element);
+  }
+
+  function upSorted (element, index, array){
+    if (index === 0){
+      return true
+    } else {
+      return element >= array[index-1];
+    }
+  }
+
+  function downSorted (element, index, array){
+    if (index === 0){
+      return true
+    } else {
+      return element <= array[index-1];
+    }
+  }
+
+
+  const arraySortInfo = (inputArray) => {
+    if(!inputArray.every(typeOfArray)){
+      return 'Деякі елементи не є числами';
+    }
+    if(inputArray.every(upSorted)){
+      return 'Масив відсортований за зростанням';
+    }
+    if(inputArray.every(downSorted)){
+      return 'Масив відсортований за спаданням';
+    }
+    return 'Масив не відсортований'
+  }
+
+  console.log(arraySortInfo(d));
