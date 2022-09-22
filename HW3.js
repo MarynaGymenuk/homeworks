@@ -274,18 +274,17 @@ console.log(findProductById(45834, products));
     }
   }
 
-
   const arraySortInfo = (inputArray) => {
     if(!inputArray.every(typeOfArray)){
       return 'Деякі елементи не є числами';
-    }
-    if(inputArray.every(upSorted)){
+    } else if(inputArray.every(upSorted)){
       return 'Масив відсортований за зростанням';
-    }
-    if(inputArray.every(downSorted)){
+    } else if(inputArray.every(downSorted)){
       return 'Масив відсортований за спаданням';
+    } else {
+      return 'Масив не відсортований';
     }
-    return 'Масив не відсортований'
   }
 
-  console.log(arraySortInfo(d));
+  console.log(arraySortInfo(c));
+  
