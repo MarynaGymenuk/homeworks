@@ -15,6 +15,9 @@ function(){
     cy.get('#inputWebsite').should('contain.value', expectedValue[3]);
 }
 
+let marina = ['Marina', 'Humeniuk', 'gymenuk93@gmail.com', 'https://www.youtube.com/'];
+let iryna = ['Iryna', 'Khmurova', 'khmur@gmail.com', 'https://www.google.com.ua/'];
+let liza = ['Liza', 'Khmurova', 'lizakhmur93@gmail.com', 'https://www.facebook.com/'];
 
 before(() => {
     cy.visit("https://sanitarskyi-ngx-admin.herokuapp.com/");
@@ -24,11 +27,8 @@ before(() => {
     cy.get('[title="Form Layouts"]').click();
 });
 
-it('Filling Block Form 1', testWithParams({value: ['Marina', 'Humeniuk', 'gymenuk93@gmail.com', 'https://www.youtube.com/'], 
-expectedValue: ['Marina', 'Humeniuk', 'gymenuk93@gmail.com', 'https://www.youtube.com/']}));
+it('Filling Block Form 1', testWithParams({value: marina, expectedValue: marina}));
 
-it('Filling Block Form 2', testWithParams({value: ['Iryna', 'Khmurova', 'khmur@gmail.com', 'https://www.google.com.ua/'], 
-expectedValue: ['Iryna', 'Khmurova', 'khmur@gmail.com', 'https://www.google.com.ua/']}));
+it('Filling Block Form 2', testWithParams({value: iryna, expectedValue: iryna}));
 
-it('Filling Block Form 3', testWithParams({value: ['Liza', 'Khmurova', 'lizakhmur93@gmail.com', 'https://www.facebook.com/'], 
-expectedValue: ['Liza', 'Khmurova', 'lizakhmur93@gmail.com', 'https://www.facebook.com/']}));
+it('Filling Block Form 3', testWithParams({value: liza, expectedValue: liza}));
